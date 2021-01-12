@@ -55,7 +55,7 @@ include "../layouts/index-header.php";
     </div><!-- .container -->
 </div><!-- .home-page-icon-boxes -->
 
-<div class="home-page-welcome">
+<div class="home-page-welcome mb-5">
     <div class="container">
         <div class="row">
             <div class="col-12 col-lg-6 order-2 order-lg-1">
@@ -84,98 +84,6 @@ include "../layouts/index-header.php";
     </div><!-- .container -->
 </div><!-- .home-page-icon-boxes -->
 
-<div class="home-page-events">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-lg-6">
-                <div class="upcoming-events">
-                    <div class="section-heading">
-                        <h2 class="entry-title">Upcoming Events</h2>
-                    </div><!-- .section-heading -->
-
-
-                    <!--                            --><?php
-                    //   					 include("config.php");
-                    //      				  $run=mysqli_query($conn,"select * from upcoming_event limit 0,3");
-                    //       				 while($row=mysqli_fetch_assoc($run))
-                    //        {
-                    //
-                    //        ?>
-                    <div class="event-wrap d-flex flex-wrap justify-content-between">
-                        <figure class="m-0">
-                            <!-- <img src="admin/image/event/1553839455_ad2.jpeg" alt=""> -->
-                            <img src="">
-
-                        </figure>
-                        <div class="event-content-wrap">
-                            <header class="entry-header d-flex flex-wrap align-items-center">
-                                <h4 class="entry-title w-100 m-0"></h4>
-
-                                <div class="posted-date">
-                                    <!--                                    --><?php //echo date('d-m-Y h:i:s a',strtotime($row['event_date'])); ?>
-                                </div><!-- .posted-date -->
-                            </header>
-                            <div class="cats-links">
-                                <!--                                    --><?php //echo $row['event_place'];?>
-                            </div><!-- .cats-links -->
-                            <!-- .entry-header -->
-
-                            <div class="entry-content">
-                                <p class="m-0"></p>
-                            </div><!-- .entry-content -->
-
-
-                        </div><!-- .event-content-wrap -->
-                    </div><!-- .event-wrap -->
-                    <?php //}?>
-                </div><!-- .upcoming-events -->
-            </div><!-- .col -->
-
-            <div class="col-12 col-lg-6">
-                <div class="upcoming-events">
-                    <div class="section-heading">
-                        <h2 class="entry-title">Upcoming Events</h2>
-                    </div><!-- .section-heading -->
-
-
-                    <!--                            --><?php
-                    //                     include("config.php");
-                    //                      $run=mysqli_query($conn,"select * from upcoming_event limit 3,5");
-                    //                     while($row=mysqli_fetch_assoc($run))
-                    //        {
-                    //        ?>
-                    <div class="event-wrap d-flex flex-wrap justify-content-between">
-                        <figure class="m-0">
-                            <img src="">
-                            <!-- <?php echo "../../" . $row['pic']; ?> -->
-                        </figure>
-                        <div class="event-content-wrap">
-                            <header class="entry-header d-flex flex-wrap align-items-center">
-                                <h4 class="entry-title w-100 m-0"></h4>
-
-                                <div class="posted-date">
-                                    <!--                                        --><?php //echo $row['event_date'];?>
-                                </div><!-- .posted-date -->
-
-
-                            </header><!-- .entry-header -->
-
-                            <div class="cats-links">
-
-                            </div><!-- .cats-links -->
-                            <div class="entry-content">
-                                <p class="m-0"></p>
-                            </div><!-- .entry-content -->
-
-
-                        </div><!-- .event-content-wrap -->
-                    </div><!-- .event-wrap -->
-                    <?php //}?>
-                </div><!-- .upcoming-events -->
-            </div><!-- .col -->
-        </div><!-- .row -->
-    </div><!-- .container -->
-</div><!-- .home-page-events -->
 
 <?php
 include "../layouts/footer.php";
