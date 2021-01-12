@@ -1,0 +1,17 @@
+
+.btn-circle{
+    width: 250px;
+    height: 150px;
+    padding: 6px 0px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.media{
+    background-color: white;
+}
+
+.active{
+    background-color: #f55734;
+    color:white;
+}
