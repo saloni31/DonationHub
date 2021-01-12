@@ -131,8 +131,6 @@ if (isset($_POST['Service_Btn'])) {
 }
 
 if (isset($_POST['Date_pdf'])) {
-    print_r($_POST);
-
 
     //$end_date=substr($date,12);
     $start_date = $_POST['s_date'];
@@ -193,7 +191,11 @@ if (isset($_POST['Date_pdf'])) {
             $pdf->Cell(14, 10, $i, 1, 0, 'C', true);
             $pdf->Cell(50, 10, $row5['fullName'], 1, 0, 'C', true);
             $pdf->Cell(30, 10, $donate_type, 1, 0, 'C', true);
-            $pdf->Cell(70, 10, $row5['email'], 1, 0, 'C', true);
+
+            $run = mysqli_query($conn,"select * from user where userId=".$row5['userId']);
+            $row1=mysqli_fetch_array($run);
+
+            $pdf->Cell(70, 10, $row1['email'], 1, 0, 'C', true);
             $pdf->Cell(30, 10, $row5['contactno'], 1, 1, 'C', true);
             $i++;
         }
