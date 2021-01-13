@@ -1,15 +1,16 @@
 <?php
+session_start();
 require "../database/config.php";
 require '../PHPMailer-5.2.27/PHPMailerAutoload.php';
 require '../PHPMailer-5.2.27/class.smtp.php';
 
 // for Donation request.....
 if (isset($_POST['sub_cat']) && isset($_POST['donor_id'])) {
-    $sql4 = "select bloodgroup from donor_register where donor_id=" . $_POST['donor_id'];
-    $result = mysqli_query($conn, $sql4);
-    if ($row4 = mysqli_fetch_assoc($result)) {
-        $blood_group = $row4['bloodgroup'];
-    }
+//    $sql4 = "select bloodgroup from donor_register where donor_id=" . $_POST['donor_id'];
+//    $result = mysqli_query($conn, $sql4);
+//    if ($row4 = mysqli_fetch_assoc($result)) {
+//
+//    }
     $catagory = $_POST['sub_cat'];
     $sql = "select * from services where service_name='" . $catagory . "'";
     $res = mysqli_query($conn, $sql);
@@ -327,19 +328,26 @@ if(isset($_POST['city'])) {
 
 if(isset($_POST['req_id'])){
     $sql="update request set vol_accept=1 where req_id=".$_POST['req_id'];
+
 //    $res=mysqli_query($conn,$sql);
     if(mysqli_query($conn,$sql)){
-        $sql1="select * from request where donate_id=".$_POST['donor_id'];
-        $res1=mysqli_query($conn,$res1);
+        $sql1="select * from request where req_id=".$_POST['req_id'];
+//        echo  $sql1;
+        $res1=mysqli_query($conn,$sql1);
         $row=mysqli_fetch_array($res1);
 
-        $res4=mysqli_query($conn,"select * from volunteer where volunteer_id=".$_SESSION['user']['id']);
+        $query3="select * from volunteer where volunteer_id=".$_SESSION['user']['id'];
+
+
+        $res4=mysqli_query($conn,$query3);
         $row3=mysqli_fetch_array($res4);
+
 
 
 
         $body = "Your Donation request is Accepted by volunteer name ".$row3['fullName'];
         $mail = new PHPMailer;
+
 
         $mail->isSMTP();
         $mail->Host = "smtp.gmail.com";
@@ -367,8 +375,9 @@ if(isset($_POST['donate_id'])){
     $sql="update donation set vol_accept=1 where donate_id=".$_POST['donate_id'];
 //    $res=mysqli_query($conn,$sql);
     if(mysqli_query($conn,$sql)){
-        $sql1="select * from donation where donate_id=".$_POST['donor_id'];
-        $res1=mysqli_query($conn,$res1);
+        $sql1="select * from donation where donate_id=".$_POST['donate_id'];
+
+        $res1=mysqli_query($conn,$sql1);
         $row=mysqli_fetch_array($res1);
 
         $res2=mysqli_query($conn,"select * from donor where donor_id=".$row['donor_id']);

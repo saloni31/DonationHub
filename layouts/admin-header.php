@@ -149,15 +149,13 @@ session_start();
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <?php
+                                $query="select * from admin where id=".  $_SESSION['user']['id'];
+                                $res=mysqli_query($conn,$query);
+                                $result=mysqli_fetch_array($res);
 
-<!--                            --><?php
-//                            echo "select * from admin where admin_id=".$_SESSION['user']['id'];
-//                            $res=mysqli_query($conn,"select * from admin where admin_id=".$_SESSION['user']['id']);
-//                            $row=mysqli_fetch_array($res);
-//                            ?>
-
-<!--                            <img src="--><?php //echo $row['photo'] ?><!--" height="50" width="50">-->
-                            <span class="mr-2 d-none d-lg-inline text-gray-600 small" id="userName"></span>
+                            ?>
+                            <span class="mr-2 d-none d-lg-inline text-gray-600 small text-capitalize" id="userName"><?php echo $result['fullname'] ?></span>
 
                         </a>
                         <!-- Dropdown - User Information -->

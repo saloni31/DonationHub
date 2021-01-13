@@ -70,7 +70,8 @@ include "../layouts/footer.php";
             url:'data.php',
             data: 'donate_id='+id,
             success: function (data) {
-                if(data === "DONE"){
+                if(data.trim() === "DONE"){
+                    alert("Request Approve")
                     window.location.reload(true);                        }
             }
         })

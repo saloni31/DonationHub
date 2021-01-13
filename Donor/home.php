@@ -177,7 +177,9 @@ include "../layouts/footer.php";
 <script>
     $(document).ready(function () {
         $("#city").change(function () {
+
             var c_id=$("#city").val();
+
             var pos=$.post("../Volunteer/data.php",{c_id:c_id});
             $("#area").empty();
             pos.done(function (data) {

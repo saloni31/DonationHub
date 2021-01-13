@@ -86,8 +86,9 @@ include "../layouts/footer.php";
                     url:'data.php',
                     data: 'req_id='+id,
                     success: function (data) {
-                        if(data === "DONE"){
-                            window.location.reload();                        }
+                        if(data.trim() === "DONE"){
+                            alert('Your Request Approve');
+                            window.location.reload(true);                        }
                     }
                 })
     }
