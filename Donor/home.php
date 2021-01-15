@@ -189,6 +189,3 @@ include "../layouts/footer.php";
         });
     })
 </script>
-
-
-
