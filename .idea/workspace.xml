@@ -2,20 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c2e54213-8cc8-48ed-877b-2a4e1a967856" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Donor/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/Donor/home.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volunteer/acceptList.php" beforeDir="false" afterPath="$PROJECT_DIR$/Volunteer/acceptList.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volunteer/data.php" beforeDir="false" afterPath="$PROJECT_DIR$/Volunteer/data.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volunteer/requestList.php" beforeDir="false" afterPath="$PROJECT_DIR$/Volunteer/requestList.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volunteer/user_request.php" beforeDir="false" afterPath="$PROJECT_DIR$/Volunteer/user_request.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/admin-header.php" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/admin-header.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/PHPMailer-5.2.27/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -48,6 +43,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -58,11 +54,37 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1610544283303</updated>
-      <workItem from="1610544294748" duration="4189000" />
+      <workItem from="1610544294748" duration="4667000" />
+      <workItem from="1610723320297" duration="16000" />
+      <workItem from="1610725324669" duration="872000" />
     </task>
+    <task id="LOCAL-00001" summary="final">
+      <created>1610548734249</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1610548734249</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="final" />
+    <option name="LAST_COMMIT_MESSAGE" value="final" />
   </component>
 </project>
