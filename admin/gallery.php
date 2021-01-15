@@ -20,10 +20,12 @@ if(isset($_POST['add'])){
     <!-- Begin Page Content -->
     <div class="container-fluid">
         <div class="row mb-3">
-            <div class="col-sm-10"></div>
+            <div class="col-sm-10">
+                <!-- <input type="text" class="pull-left ml-2" id="search" placeholder="search......"> -->
+            </div>
             <div class="col-sm-2">
-                <a href="#" class="btn btn-bg btn-primary" data-toggle="modal" data-target="#photos"><span
-                            class="fa fa-plus mr-1"></span>Add Event Photos</a>
+                <a href="#" class="btn btn-bg btn-primary" data-toggle="modal" data-target="#photos">
+                    <span class="fa fa-plus mr-1"></span>Add Event Photos</a>
             </div>
         </div>
 
@@ -133,6 +135,16 @@ if(isset($_POST['add'])){
         // }
     </script>
 
+<script>
+    $(document).ready(function(){
+            $("#search").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+</script>
 <?php
 include('../layouts/admin-footer.php')
 ?>

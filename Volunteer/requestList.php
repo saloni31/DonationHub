@@ -7,6 +7,7 @@ $volunteer_id=$_SESSION['user']['id'];
     <div class="card shadow mb-4 mt-3">
         <div class="card-body">
             <div class="card-header py-3">
+                <input type="text" class="pull-right" id="search" placeholder="search......">
                 <h3 class="m-0 font-weight-bold text-primary">Donation Request List</h3>
             </div>
             <div class="table-responsive">
@@ -23,7 +24,7 @@ $volunteer_id=$_SESSION['user']['id'];
                     </tr>
                     </thead>
 
-                    <tbody>
+                    <tbody id="myTable">
                         <?php
                         $sql = "select * from donation where vol_accept=0 and  area='".$_SESSION['user']['area']."'";
                         $res = mysqli_query($conn, $sql);
@@ -60,9 +61,22 @@ $volunteer_id=$_SESSION['user']['id'];
         </div>
     </div>
 </div>
+
+<script>
+    $(document).ready(function(){
+            $("#search").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+</script>
+
 <?php
 include "../layouts/footer.php";
 ?>
+
 <script>
     function verify(id) {
         $.ajax({
@@ -72,8 +86,10 @@ include "../layouts/footer.php";
             success: function (data) {
                 if(data.trim() === "DONE"){
                     alert("Request Approve")
-                    window.location.reload(true);                        }
+                    window.location.reload(true);                       
+                     }
             }
         })
     }
 </script>
+

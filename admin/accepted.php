@@ -9,7 +9,14 @@ include('../layouts/admin-header.php');
 
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h3 class="m-0 font-weight-bold text-primary">Accepted Helping Requests</h3>
+                <div class="row">
+                    <div class="col-sm-9">
+                        <h3 class="m-0 font-weight-bold text-primary">Accepted Helping Requests</h3>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="pull-right" id="search" placeholder="search......">
+                    </div>
+                </div>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -28,7 +35,7 @@ include('../layouts/admin-header.php');
                             <th>Quantity</th>
                         </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="myTable">
                         <?php
                         $run = mysqli_query($conn, "select * from request where vol_accept=1");
                         $i = 1;
@@ -71,58 +78,18 @@ include('../layouts/admin-header.php');
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
-    <!--<script>-->
-    <!---->
-    <!--  $(document).ready(function() {-->
-    <!---->
-    <!--    $('#dataTable').DataTable({-->
-    <!--      processing: true,-->
-    <!---->
-    <!--      ajax:{-->
-    <!--        url:'http://127.0.0.1:8000/api/fetchFaculties'-->
-    <!---->
-    <!--      },-->
-    <!--      columns:[-->
-    <!--        {"data":"DT_RowIndex"},-->
-    <!--        {"data":"name"},-->
-    <!--        {"data":"email"},-->
-    <!--        {"data":"mobileNumber"},-->
-    <!--        {"data":"action"}-->
-    <!---->
-    <!--      ],-->
-    <!--        "language": {-->
-    <!--            "emptyTable":"No Request Is Pending"-->
-    <!--        }-->
-    <!---->
-    <!---->
-    <!--    });-->
-    <!--  });-->
-    <!--  function approveFaculty(id)-->
-    <!--  {-->
-    <!--    $(".container-fluid").css("opacity","0.5");-->
-    <!--    $(".spinner-grow").show()-->
-    <!--    $(".txt").show()-->
-    <!--      $.ajax({-->
-    <!--        url: 'http://127.0.0.1:8000/api/approveFaculty/'+id,-->
-    <!--        success:function (data,status,xhr) {-->
-    <!--          $(".container-fluid").css("opacity","");-->
-    <!--          $(".spinner-grow").hide()-->
-    <!--          $(".txt").hide()-->
-    <!--          location.reload()-->
-    <!--        },-->
-    <!--        error: function (xhr,status,error) {-->
-    <!--          $(".container-fluid").css("opacity","");-->
-    <!--          $(".spinner-grow").hide()-->
-    <!--          $(".txt").hide()-->
-    <!--          if(xhr.status===400)-->
-    <!--          {-->
-    <!--            $("#alertMsg").show();-->
-    <!--          }-->
-    <!--        }-->
-    <!--      })-->
-    <!--  }-->
-    <!--</script>-->
 
 <?php
 include('../layouts/admin-footer.php')
 ?>
+
+<script>
+    $(document).ready(function(){
+            $("#search").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+</script>

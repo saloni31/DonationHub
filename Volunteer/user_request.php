@@ -6,6 +6,7 @@ include "../layouts/header.php";
     <div class="card shadow mb-4 mt-3">
         <div class="card-body">
             <div class="card-header py-3">
+                <input type="text" class="pull-right" id="search" placeholder="search......">
                 <h3 class="m-0 font-weight-bold text-primary">Helping Request List</h3>
             </div>
             <div class="table-responsive">
@@ -25,7 +26,7 @@ include "../layouts/header.php";
                     </tr>
                     </thead>
 
-                    <tbody>
+                    <tbody id="myTable">
                     <tr>
                         <?php
                         if (isset($_SESSION['user'])) {
@@ -78,6 +79,17 @@ include "../layouts/header.php";
 <?php
 include "../layouts/footer.php";
 ?>
+
+<script>
+    $(document).ready(function(){
+            $("#search").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+</script>
 
 <script>
     function verify(id) {

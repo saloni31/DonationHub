@@ -9,7 +9,14 @@ include('../layouts/admin-header.php');
 
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h3 class="m-0 font-weight-bold text-primary">Donor Requests</h3>
+                <div class="row">
+                    <div class="col-sm-9">
+                        <h3 class="m-0 font-weight-bold text-primary">Donor Requests</h3>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="pull-right" id="search" placeholder="search......">
+                    </div>
+                </div>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -26,7 +33,7 @@ include('../layouts/admin-header.php');
                             <th>Approve</th>
                         </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="myTable">
                         <?php
                         $run = mysqli_query($conn, "select * from donor where admin_accept=0");
                         $i = 1;
@@ -78,3 +85,14 @@ include('../layouts/admin-header.php');
 <?php
 include('../layouts/admin-footer.php')
 ?>
+
+<script>
+    $(document).ready(function(){
+            $("#search").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+</script>
