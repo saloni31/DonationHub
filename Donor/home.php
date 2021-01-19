@@ -151,10 +151,7 @@ include "../layouts/footer.php";
         $("#Type").change(function () {
 
             var sub_cat = $("#Type").val();
-            //var sub_cat_name = $("#Type").val();
-            // var name = $("#Type").attr("name");
-            // alert(sub_cat);
-            var donor_id="<?php echo $_SESSION['donor']['id'] ?>";
+            var donor_id="<?php echo $_SESSION['user']['id'] ?>";
 
 
             var pos = $.post("../Volunteer/data.php", {sub_cat: sub_cat,donor_id:donor_id});
